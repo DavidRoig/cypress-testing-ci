@@ -1,0 +1,1524 @@
+
+npm install cypress --save-dev
+
+
+*********************************
+
+npm install cypress --save-dev
+
+
+*********************************
+
+{
+  "name": "05-testing-01-react",
+  "version": "1.0.0",
+  "description": "Learn testing by sample using Jest and React, each of the samples contains a readme.md file that indicates the purpose of the sample plus an step by step guide to reproduce it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p -l type-check:watch start:dev start:server",
+    "start:dev": "webpack serve --config ./config/webpack/dev.js",
+    "start:server": "cd server && npm run mock-server",
+    "build": "run-p -l type-check build:prod",
+    "build:prod": "npm run clean && webpack --config ./config/webpack/prod.js",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "clean": "rimraf dist",
+    "postinstall": "cd ./server && npm install",
+    "test:e2e": "cypress open"
+  },
+  "author": "Lemoncode",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/css": "^11.1.3",
+    "@lemoncode/fonk": "^1.5.1",
+    "@lemoncode/fonk-formik": "^4.0.1",
+    "@lemoncode/fonk-min-number-validator": "^1.2.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "material-ui-rating": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "babel-loader": "^8.2.2",
+    "cypress": "^8.3.1",
+    "dotenv-webpack": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
+
+
+*********************************
+
+npm run test:e2e
+
+
+*********************************
+
+login.spec.js
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('http://localhost:8080');
+  });
+});
+
+
+*********************************
+
+{
+  "name": "05-testing-01-react",
+  "version": "1.0.0",
+  "description": "Learn testing by sample using Jest and React, each of the samples contains a readme.md file that indicates the purpose of the sample plus an step by step guide to reproduce it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p -l type-check:watch start:dev start:server",
+    "start:dev": "webpack serve --config ./config/webpack/dev.js",
+    "start:server": "cd server && npm run mock-server",
+    "build": "run-p -l type-check build:prod",
+    "build:prod": "npm run clean && webpack --config ./config/webpack/prod.js",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "clean": "rimraf dist",
+    "postinstall": "cd ./server && npm install",
+    "test:e2e": "npm start -- start:e2e",
+    "start:e2e": "cypress open"
+  },
+  "author": "Lemoncode",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/css": "^11.1.3",
+    "@lemoncode/fonk": "^1.5.1",
+    "@lemoncode/fonk-formik": "^4.0.1",
+    "@lemoncode/fonk-min-number-validator": "^1.2.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "material-ui-rating": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "babel-loader": "^8.2.2",
+    "cypress": "^8.3.1",
+    "dotenv-webpack": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
+
+
+*********************************
+
+npm run test:e2e
+
+
+*********************************
+
+{
+  "baseUrl": "http://localhost:8080/#"
+}
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+});
+
+
+*********************************
+
+npm run test:e2e
+
+
+*********************************
+
+tsconfig.json
+
+*********************************
+
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "../node_modules",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "types": ["cypress"]
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').click();
+
+    // Assert
+    cy.get('input[name="name"]').should('have.focus');
+  });
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').click();
+
+    // Assert
+    cy.get('input[name="name"]').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    
+  })
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').click();
+
+    // Assert
+    cy.get('input[name="name"]').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').type(user);
+    cy.get('input[name="password"]').type(password);
+
+    // Assert
+    cy.get('input[name="name"]').should('have.value', user);
+    cy.get('input[name="password"]').should('have.value', password);
+  })
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').click();
+
+    // Assert
+    cy.get('input[name="name"]').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+
+    // Act
+    cy.visit('/');
+    const userInput = cy.get('input[name="name"]');
+    const passwordInput = cy.get('input[name="password"]');
+    userInput.type(user);
+    passwordInput.type(password);
+
+    // Assert
+    userInput.should('have.value', user);
+    passwordInput.should('have.value', password);
+  });
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').click();
+
+    // Assert
+    cy.get('input[name="name"]').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+
+    // Act
+    cy.visit('/');
+    cy.get('input[name="name"]').as('userInput');
+    cy.get('input[name="password"]').as('passwordInput');
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+
+    // Assert
+    cy.get('@userInput').should('have.value', user);
+    cy.get('@passwordInput').should('have.value', password);
+  });
+});
+
+
+*********************************
+
+npm install @testing-library/cypress --save-dev
+
+
+*********************************
+
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "../node_modules",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "types": ["cypress", "@testing-library/cypress"]
+  },
+  "include": ["**/*.ts"]
+}
+
+
+*********************************
+
+index.ts
+
+*********************************
+
+import '@testing-library/cypress/add-commands';
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+
+    cy.findByRole('textbox').click();
+
+    // Assert
+    cy.findByRole('textbox').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+
+    // Act
+    cy.visit('/');
+    cy.findByRole('textbox').as('userInput');
+    cy.findByLabelText('Password').as('passwordInput');
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+
+    // Assert
+    cy.get('@userInput').should('have.value', user);
+    cy.get('@passwordInput').should('have.value', password);
+  });
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+
+    cy.findByRole('textbox').click();
+
+    // Assert
+    cy.findByRole('textbox').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+    cy.on('window:alert', cy.stub().as('alertStub'));
+
+    // Act
+    cy.visit('/');
+    cy.findByRole('textbox').as('userInput');
+    cy.findByLabelText('Password').as('passwordInput');
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+    cy.findByRole('button').click();
+
+    // Assert
+    cy.get('@userInput').should('have.value', user);
+    cy.get('@passwordInput').should('have.value', password);
+    cy.get('@alertStub').should(
+      'have.been.calledWith',
+      'invalid credentials, use admin/test, excercise: display a mui snackbar instead of this alert.'
+    );
+  });
+});
+
+
+*********************************
+
+describe('Login specs', () => {
+  it('visit the login page', () => {
+    cy.visit('/');
+  });
+
+  it('should name input has the focus when it clicks on it', () => {
+    // Arrange
+
+    // Act
+    cy.visit('/');
+
+    cy.findByRole('textbox').click();
+
+    // Assert
+    cy.findByRole('textbox').should('have.focus');
+  });
+
+  it('should show an alert with a message when type invalid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = '1234';
+    cy.on('window:alert', cy.stub().as('alertStub'));
+
+    // Act
+    cy.visit('/');
+    cy.findByRole('textbox').as('userInput');
+    cy.findByLabelText('Password').as('passwordInput');
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+    cy.findByRole('button').click();
+
+    // Assert
+    cy.get('@userInput').should('have.value', user);
+    cy.get('@passwordInput').should('have.value', password);
+    cy.get('@alertStub').should(
+      'have.been.calledWith',
+      'invalid credentials, use admin/test, excercise: display a mui snackbar instead of this alert.'
+    );
+  });
+
+  it('should navigate to hotels url when type valid credentials', () => {
+    // Arrange
+    const user = 'admin';
+    const password = 'test';
+
+    // Act
+    cy.visit('/');
+    cy.findByRole('textbox').as('userInput');
+    cy.findByLabelText('Password').as('passwordInput');
+    cy.get('@userInput').type(user);
+    cy.get('@passwordInput').type(password);
+    cy.findByRole('button').click();
+
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-collection');
+  });
+});
+
+
+*********************************
+
+hotel-collection.spec.ts
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    // Assert
+  });
+});
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+});
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+});
+
+
+*********************************
+
+import { HotelEntityApi } from '../../src/pods/hotel-collection/api';
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+    const hotels = [
+      {
+        id: '1',
+        thumbNailUrl: '/thumbnails/50947_264_t.jpg',
+        name: 'Motif Seattle',
+        shortDescription:
+          'With a stay at Motif Seattle, you will be centrally located in Seattle, steps from 5th Avenue Theater and minutes from Pike Place Market. This 4-star hotel is within',
+        address1: '1415 5th Ave',
+        hotelRating: 4,
+        city: 'Seattle',
+      },
+      {
+        id: '2',
+        thumbNailUrl: '/thumbnails/16673_260_t.jpg',
+        name: 'The Westin Seattle',
+        shortDescription:
+          "With a stay at The Westin Seattle, you'll be centrally laocated in Seattle, steps from Westlake Center and minutes from Pacific Place. This 4-star hotel is close to",
+        address1: '1900 5th Ave',
+        hotelRating: 4,
+        city: 'Seattle',
+      },
+    ] as HotelEntityApi[];
+    cy.intercept('GET', '/api/hotels', hotels);
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+import { HotelEntityApi } from '../../src/pods/hotel-collection/api';
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+    const hotels = [
+      {
+        id: '1',
+        thumbNailUrl: '/thumbnails/50947_264_t.jpg',
+        name: 'Motif Seattle',
+        shortDescription:
+          'With a stay at Motif Seattle, you will be centrally located in Seattle, steps from 5th Avenue Theater and minutes from Pike Place Market. This 4-star hotel is within',
+        address1: '1415 5th Ave',
+        hotelRating: 4,
+        city: 'Seattle',
+      },
+      {
+        id: '2',
+        thumbNailUrl: '/thumbnails/16673_260_t.jpg',
+        name: 'The Westin Seattle',
+        shortDescription:
+          "With a stay at The Westin Seattle, you'll be centrally laocated in Seattle, steps from Westlake Center and minutes from Pacific Place. This 4-star hotel is close to",
+        address1: '1900 5th Ave',
+        hotelRating: 4,
+        city: 'Seattle',
+      },
+    ] as HotelEntityApi[];
+    cy.intercept('GET', '/api/hotels', hotels);
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+[
+  {
+    "id": "1",
+    "thumbNailUrl": "/thumbnails/50947_264_t.jpg",
+    "name": "Motif Seattle",
+    "shortDescription": "With a stay at Motif Seattle, you will be centrally located in Seattle, steps from 5th Avenue Theater and minutes from Pike Place Market. This 4-star hotel is within",
+    "address1": "1415 5th Ave",
+    "hotelRating": 4,
+    "city": "Seattle"
+  },
+  {
+    "id": "2",
+    "thumbNailUrl": "/thumbnails/16673_260_t.jpg",
+    "name": "The Westin Seattle",
+    "shortDescription": "With a stay at The Westin Seattle, you'll be centrally laocated in Seattle, steps from Westlake Center and minutes from Pacific Place. This 4-star hotel is close to",
+    "address1": "1900 5th Ave",
+    "hotelRating": 4,
+    "city": "Seattle"
+  }
+]
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+    cy.fixture('hotels').then(hotels => {
+      cy.intercept('GET', '/api/hotels', hotels);
+    })
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+    cy.intercept('GET', '/api/hotels', {
+      fixture: 'hotels.json',
+    });
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+import Axios from 'axios';
+import { HotelEntityApi } from './hotel-collection.api-model';
+
+const url = '/api/hotels';
+
+export const getHotelCollection = async (): Promise<HotelEntityApi[]> => {
+  const promise = new Promise<HotelEntityApi[]>((resolve) => {
+    Axios.get(url).then(({ data }) => setTimeout(() => resolve(data), 4000));
+  });
+
+  return promise;
+};
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+    cy.intercept('GET', '/api/hotels').as('fetchHotels');
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.wait('@fetchHotels');
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+    cy.intercept('GET', '/api/hotels').as('fetchHotels');
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.wait('@fetchHotels');
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+    cy.intercept('GET', '/api/hotels', {
+      fixture: 'hotels.json',
+    }).as('fetchHotels');
+
+    // Act
+    cy.visit('/hotel-collection');
+
+    // Assert
+    cy.wait('@fetchHotels');
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+import Axios from 'axios';
+import { HotelEntityApi } from './hotel-collection.api-model';
+
+const url = '/api/hotels';
+
+export const getHotelCollection = async (): Promise<HotelEntityApi[]> => {
+  const { data } = await Axios.get<HotelEntityApi[]>(url);
+
+  return data;
+};
+
+
+*********************************
+
+command.ts
+
+*********************************
+
+Cypress.Commands.add('loadAndVisit', () => {
+  cy.intercept('GET', '/api/hotels').as('fetchHotels');
+  cy.visit('/hotel-collection');
+
+  return cy.wait('@fetchHotels');
+});
+
+
+*********************************
+
+commands.ts
+
+*********************************
+
+import '@testing-library/cypress/add-commands';
+import './commands';
+
+
+*********************************
+
+index.d.ts
+
+*********************************
+
+declare namespace Cypress {
+  interface Chainable {
+    loadAndVisit(): Chainable<Element>;
+  }
+}
+
+*********************************
+
+{
+  "compilerOptions": {
+    "strict": true,
+    "baseUrl": "../node_modules",
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "types": ["cypress", "@testing-library/cypress", "./support"]
+  },
+  "include": ["**/*.ts"]
+}
+
+
+*********************************
+
+Cypress.Commands.add(
+  'loadAndVisit',
+  (apiPath: string, routePath: string, fixture?: string) => {
+    Boolean(fixture)
+      ? cy.intercept('GET', apiPath, { fixture }).as('load')
+      : cy.intercept('GET', apiPath).as('load');
+    cy.visit(routePath);
+
+    return cy.wait('@load');
+  }
+);
+
+
+*********************************
+
+declare namespace Cypress {
+  interface Chainable {
+    loadAndVisit(
+      apiPath: string,
+      routePath: string,
+      fixture?: string
+    ): Chainable<Element>;
+  }
+}
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection', 'hotels.json');
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+import * as React from 'react';
+import { useHistory } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography';
+import Avatar from '@material-ui/core/Avatar/Avatar';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import EditIcon from '@material-ui/icons/Edit';
+import { linkRoutes } from 'core/router';
+import { HotelEntityVm } from '../hotel-collection.vm';
+import * as classes from './hotel-card.styles';
+
+interface Props {
+  hotel: HotelEntityVm;
+}
+
+export const HotelCard: React.FunctionComponent<Props> = (props) => {
+  const { hotel } = props;
+  const history = useHistory();
+
+  return (
+    <Card>
+      <CardHeader
+        avatar={<Avatar aria-label="Hotel">{hotel.rating}</Avatar>}
+        action={
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={hotel.name}
+        subheader={hotel.address}
+      />
+      <CardContent>
+        <div className={classes.content}>
+          <CardMedia
+            image={hotel.picture}
+            title={hotel.name}
+            style={{ height: 0, paddingTop: '56.25%' }}
+          />
+          <Typography variant="subtitle1" gutterBottom>
+            {hotel.description}
+          </Typography>
+        </div>
+      </CardContent>
+      <CardActions>
+        <IconButton
+          aria-label="Edit hotel"
+          onClick={() => history.push(linkRoutes.hotelEdit(hotel.id))}
+        >
+          <EditIcon />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
+};
+
+
+*********************************
+
+hotel-edit.spec.ts
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    // Assert
+  });
+});
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+  });
+});
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+});
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.findByText('Updated hotel two');
+  });
+});
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+
+    cy.intercept('GET', '/api/hotels/2').as('loadHotel')
+
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+
+    cy.wait('@loadHotel');
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.findByText('Updated hotel two');
+  });
+});
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+
+    cy.intercept('GET', '/api/hotels/2').as('loadHotel')
+
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+
+    cy.wait('@loadHotel');
+    cy.findByLabelText('Name').should('not.have.value', '');
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.findByText('Updated hotel two');
+  });
+});
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/api/hotels', '/hotel-collection');
+
+    cy.intercept('GET', '/api/hotels/2').as('loadHotel');
+
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+
+    cy.wait('@loadHotel');
+    cy.findByLabelText('Name').should('not.have.value', '');
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.wait('@load'); // TODO
+    cy.findByText('Updated hotel two');
+  });
+});
+
+
+*********************************
+
+interface Resource {
+  path: string;
+  fixture?: string;
+  alias?: string;
+}
+
+Cypress.Commands.add(
+  'loadAndVisit',
+  (
+    visitUrl: string,
+    resources: Resource[],
+    callbackAfterVisit?: () => void
+  ) => {
+    const aliasList = resources.map((resource, index) => {
+      const alias = resource.alias || `load-${index}`;
+      Boolean(resource.fixture)
+        ? cy
+            .intercept('GET', resource.path, { fixture: resource.fixture })
+            .as(alias)
+        : cy.intercept('GET', resource.path).as(alias);
+
+      return alias;
+    });
+
+    cy.visit(visitUrl);
+    if (callbackAfterVisit) {
+      callbackAfterVisit();
+    }
+
+    aliasList.forEach((alias) => {
+      cy.wait(`@${alias}`);
+    });
+
+    return cy;
+  }
+);
+
+
+*********************************
+
+declare namespace Cypress {
+  interface Resource {
+    path: string;
+    fixture?: string;
+    alias?: string;
+  }
+
+  interface Chainable {
+    loadAndVisit(
+      visitUrl: string,
+      resources: Resource[],
+      callbackAfterVisit?: () => void
+    ): Chainable<Element>;
+  }
+}
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/hotel-collection', [{ path: '/api/hotels' }]);
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit(
+      '/hotel-collection',
+      [
+        { path: '/api/hotels', alias: 'loadHotels' },
+        { path: '/api/hotels/2' },
+        { path: '/api/cities' },
+      ],
+      () => {
+        cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+          buttons[1].click();
+        });
+      }
+    );
+
+    cy.findByLabelText('Name').should('not.have.value', '');
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.wait('@loadHotels');
+    cy.findByText('Updated hotel two');
+  });
+});
+
+
+*********************************
+
+describe('Hotel collection specs', () => {
+  it('should fetch hotel list and show it in screen when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/hotel-collection', [{ path: '/api/hotels' }]);
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 10);
+  });
+
+  it('should fetch hotel list greater than 0 when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/hotel-collection', [{ path: '/api/hotels' }]);
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length.greaterThan', 0);
+  });
+
+  it('should fetch two hotels when visit /hotel-collection url', () => {
+    // Arrange
+
+    // Act
+    cy.loadAndVisit('/hotel-collection', [
+      { path: '/api/hotels', fixture: 'hotels.json' },
+    ]);
+
+    // Assert
+    cy.findAllByRole('listitem').should('have.length', 2);
+  });
+});
+
+
+*********************************
+
+{
+  "name": "05-testing-01-react",
+  "version": "1.0.0",
+  "description": "Learn testing by sample using Jest and React, each of the samples contains a readme.md file that indicates the purpose of the sample plus an step by step guide to reproduce it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p -l type-check:watch start:dev start:server",
+    "start:dev": "webpack serve --config ./config/webpack/dev.js",
+    "start:server": "cd server && npm run mock-server",
+    "build": "run-p -l type-check build:prod",
+    "build:prod": "npm run clean && webpack --config ./config/webpack/prod.js",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "clean": "rimraf dist",
+    "postinstall": "cd ./server && npm install",
+    "test:e2e": "npm start -- start:e2e",
+    "start:e2e": "cypress open",
+    "test:e2e:ci": "npm start -- -r start:e2e:ci",
+    "start:e2e:ci": "cypress run"
+  },
+  "author": "Lemoncode",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/css": "^11.1.3",
+    "@lemoncode/fonk": "^1.5.1",
+    "@lemoncode/fonk-formik": "^4.0.1",
+    "@lemoncode/fonk-min-number-validator": "^1.2.0",
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "material-ui-rating": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@emotion/babel-plugin": "^11.3.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@testing-library/cypress": "^8.0.1",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "babel-loader": "^8.2.2",
+    "cypress": "^8.3.1",
+    "dotenv-webpack": "^7.0.3",
+    "html-webpack-plugin": "^5.3.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.5",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
+
+
+*********************************
+
+describe('Hotel edit specs', () => {
+  it('should navigate to second hotel when click on edit second hotel', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit('/hotel-collection', [{ path: '/api/hotels' }]);
+    cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+      buttons[1].click();
+    });
+    // Assert
+    cy.url().should('eq', 'http://localhost:8080/#/hotel-edit/2');
+  });
+
+  it('should update hotel name when it edits an hotel and click on save button', () => {
+    // Arrange
+    // Act
+    cy.loadAndVisit(
+      '/hotel-collection',
+      [
+        { path: '/api/hotels', alias: 'loadHotels' },
+        { path: '/api/hotels/2' },
+        { path: '/api/cities' },
+      ],
+      () => {
+        cy.findAllByRole('button', { name: 'Edit hotel' }).then((buttons) => {
+          buttons[1].click();
+        });
+      }
+    );
+
+    cy.findByLabelText('Name').should('not.have.value', '');
+    cy.findByLabelText('Name').clear().type('Updated hotel two');
+    cy.findByRole('button', { name: 'Save' }).click();
+
+    // Assert
+    cy.wait('@loadHotels');
+    cy.findByText('Updated hotel three');
+  });
+});
+
+
+*********************************
+
+npm run test:e2e:ci
+
+
+*********************************
+
+node_modules
+dist
+coverage
+.awcache
+test-report.*
+junit.xml
+*.log
+*.orig
+package-lock.json
+yarn.lock
+.awcache
+cypress/videos
+cypress/screenshots
+
+*********************************
+
+name: Ci workflow
+
+on: pull_request
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Install
+        run: npm install
+      - name: Tests e2e
+        run: npm run test:e2e:ci
+      - name: Upload screenshots when specs fail
+        if: ${{ failure()}}
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: ./cypress/screenshots
+      - name: Upload videos when specs fail
+        if: ${{ failure()}}
+        uses: actions/upload-artifact@v2
+        with:
+          name: videos
+          path: ./cypress/videos
+
+
+*********************************
